@@ -45,17 +45,21 @@ function RepoGrid(props){
   )
 }
 
+//checker for input going into selectLanguage
 SelectLanguage.propTypes = {
   selectedLanguage: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
 };
+
+//checker for input going into repogrid. 
 RepoGrid.propTypes = {
   repos: PropTypes.array.isRequired
-}
+};
 
+//the popular class that display popular index.
 class Popular extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       selectedLanguage: 'All',
       repos: null
@@ -73,14 +77,14 @@ class Popular extends React.Component {
         repos : null
       }
   });
-    api.fetchPopularRepos(lang)
-      .then(function(repos){
-        this.setState(function(){
-          return {
-            repos:repos,
-          }
-        })
-      }.bind(this));
+  api.fetchPopularRepos(lang)
+     .then(function(repos){
+       this.setState(function(){
+         return {
+           repos:repos,
+         }
+       })
+     }.bind(this));
   }
   render() {
     return (
@@ -90,7 +94,7 @@ class Popular extends React.Component {
           onSelect={this.updateLanguage} 
         />
         {!this.state.repos
-          ? <p>Fetching Data from API call!</p>
+          ? <p>Fetching Data from API.</p>
           : <RepoGrid repos = {this.state.repos}/>
         }
       </div>
