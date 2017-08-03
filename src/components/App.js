@@ -1,9 +1,11 @@
-var React = require('react');
-var Popular = require('../views/Popular');
-var Nav = require("./Navbar");
-var ReactRouter = require("react-router-dom");
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
+var React = require('react'),
+	 Popular = require('../views/popular'),
+	 Home = require("../views/home"),
+	 Battle = require("../views/battle"),
+	 Nav = require("./Navbar"),
+	 ReactRouter = require("react-router-dom"),
+	 Router = ReactRouter.BrowserRouter,
+	 Route = ReactRouter.Route;
 
 class App extends React.Component {
   render() {
@@ -12,6 +14,8 @@ class App extends React.Component {
     		<div className = "container">
     			<Nav />
     			<Route path = '/popular' component = {Popular} />
+    			<Route exact path = '/' component = {Home} />
+    			<Route path = '/battle' component = {Battle} />
     		</div>
     	</Router>
     )
