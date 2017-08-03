@@ -5,6 +5,7 @@ var React = require('react'),
 	 Nav = require("./Navbar"),
 	 ReactRouter = require("react-router-dom"),
 	 Router = ReactRouter.BrowserRouter,
+	 Switch = ReactRouter.Switch,
 	 Route = ReactRouter.Route;
 
 class App extends React.Component {
@@ -13,10 +14,15 @@ class App extends React.Component {
     	<Router>
     		<div className = "container">
     			<Nav />
-    			<Route path = '/popular' component = {Popular} />
-    			<Route exact path = '/' component = {Home} />
-    			<Route path = '/battle' component = {Battle} />
-    		</div>
+    			<Switch>
+		    		<Route exact path = '/' component = {Home} />
+		    		<Route exact path = '/battle' component = {Battle} />
+		    		<Route path = '/popular' component = {Popular} />
+		    		<Route render = {function (){
+		    			return <p>This page is not found!</p>
+		    		}} />
+		    	</Switch>
+    		</div>	
     	</Router>
     )
   }

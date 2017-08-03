@@ -7,7 +7,7 @@
 
 var React = require("react");
 
-class UserOne extends React.Component {
+class Home extends React.Component {
 
 	render(){
 		return (
@@ -18,5 +18,5 @@ class UserOne extends React.Component {
 	}
 }
 
-module.exports = UserOne;
+module.exports = Home;
 

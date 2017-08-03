@@ -1,7 +1,6 @@
 var React = require("react");
 var PropTypes = require('prop-types');
 
-
 class Battle extends React.Component{
 	render(){
 		return (
