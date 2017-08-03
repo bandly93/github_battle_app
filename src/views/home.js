@@ -5,14 +5,18 @@
 //Need two forms and a submit button that update the app when you click 
 //submit.
 
-var React = require("react");
+var React = require("react"),
+	 ReactRouter = require("react-router-dom"),
+	 Link = ReactRouter.Link;
+
 
 class Home extends React.Component {
 
 	render(){
 		return (
 			<div>
-				<p>Please enter a github user.</p>
+				<p>Battle your friends on GitHub!</p>
+				<Link className='button' to='/battle'>Battle</Link>
 			</div>
 		)
 	}
