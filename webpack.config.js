@@ -13,7 +13,13 @@ module.exports = {
 			{test: /\.css$/,use : ['style-loader','css-loader']}
 		]
 	},
+	//This module helps watch the state of the app.
+	//if you press refresh it will load the app and the react router 
+	//will know where to render the next page
+	devServer:{
+		historyApiFallback: true
+	},
 	plugins : [new HTMLWebpackPlugin({
-		template : "index.html"
+		template : "src/index.html"
 	})]
 }
