@@ -1,13 +1,12 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-var queryString = require('query-string');
-var api = require('../utils/api');
-var Link = require('react-router-dom').Link;
-var PlayerPreview = require('../components/player-preview');
+var React = require('react'),
+    PropTypes = require('prop-types'),
+    queryString = require('query-string'),
+    api = require('../utils/api'),
+    Link = require('react-router-dom').Link,
+    PlayerPreview = require('../components/player-preview');
 
 function Profile (props) {
   var info = props.info;
-
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>
       <ul className='space-list-items'>
