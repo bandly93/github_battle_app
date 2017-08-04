@@ -3,6 +3,7 @@ var PropTypes = require('prop-types');
 var Link = require('react-router-dom').Link;
 var PlayerInput = require("../components/player-input");
 var PlayerPreview = require("../components/player-preview");
+var Result
 
 class Battle extends React.Component {
   constructor(props) {
