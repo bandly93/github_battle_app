@@ -31,7 +31,7 @@ class Battle extends React.Component {
       newState[id + 'Name'] = '';
       newState[id + 'Image'] = null;
       return newState;
-    })
+    });
   }
   render() {
     var match = this.props.match;
